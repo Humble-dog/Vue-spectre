@@ -28,7 +28,10 @@ export default {
       { 
         title: 'Element 1', 
         children: [
-          { title: 'Sub-element 1' },
+          { 
+            title: 'Sub-element 1', 
+            content: 'Hello. I am content of sub-element 1.'
+          },
           { 
             title: 'Sub-element 2',
             children: [
@@ -46,12 +49,16 @@ export default {
             ]
           }
         ]
+      },
+      {
+        title: 'Element 2',
+        image: './assets/logo.png'
       }
     ]
   }),
   methods: {
     hello () {
-      console.log('hello')
+      alert('hello')
     }
   }
 }

@@ -14,19 +14,30 @@
         : active == index ? 'icon-arrow-down' : 'icon-arrow-right'"></i>
         {{item.title}}
       </div>
+      <template v-if="item.image && !item.children &&
+      Array.isArray(active) 
+      ? active.indexOf(index) != -1 ? true : false
+      : active == index ? true : false">
+        <img :src="item.image">
+      </template>
+      <template v-if="item.content && !item.children &&
+      Array.isArray(active) 
+      ? active.indexOf(index) != -1 ? true : false
+      : active == index ? true : false">
+        <div>{{item.content}}</div>
+      </template>
       <accordionItem class="children" style="cursor: pointer; position: relative; left: .5rem;"
       v-if="item.children && Array.isArray(active)
       ? active.indexOf(index) != -1
       : active == index"
-      :data="item.children" :icon="icon" :multiOpen="multiOpen">
-      </accordionItem>
+      :data="item.children" :icon="icon" :multiOpen="multiOpen" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Accordian',
+  name: 'Accordion',
   mounted() {
     if (this.multiOpen) {
       this.active = [];
@@ -53,9 +64,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.accordian {
-  transition-duration: 300ms;
-}
-</style>
