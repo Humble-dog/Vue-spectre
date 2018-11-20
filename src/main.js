@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import './assets/scss/spectre/src/spectre.scss'
-import './assets/scss/spectre/src/spectre-exp.scss'
-import './assets/scss/spectre/src/spectre-icons.scss'
+import 'spectre.css'
 
 import button from './components/elements/Button.vue'
 import label from './components/elements/Label.vue'
@@ -24,10 +22,10 @@ Object.keys(Components).forEach(name => {
 })
 
 Vue.prototype.spSizes = {
-  'large' : 'lg',
-  'small' : 'sm',
+  'large': 'lg',
+  'small': 'sm'
 }
 
-const vm = new Vue({
+new Vue({
   render: h => h(App)
 }).$mount('#app')
