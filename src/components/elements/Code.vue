@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'Code',
   props: {
     lang: {
       type: String,

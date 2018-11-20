@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  name: 'Label',
   props: {
     type: {
       type: String,
