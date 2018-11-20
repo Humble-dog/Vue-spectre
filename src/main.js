@@ -11,16 +11,13 @@ import form from './components/elements/Form.vue'
 import code from './components/elements/Code.vue'
 import icon from './components/elements/Icon.vue'
 
-import accordion from './components/components/Accordion/Accordions.vue'
-
 const Components = {
   button,
   label,
   table,
   form,
   code,
-  icon,
-  accordion
+  icon
 }
 Vue.config.productionTip = false
 

@@ -22,7 +22,7 @@ export default {
   props: {
     header: {
       type: Array,
-      required: true
+      required: true,
     },
     data: {
       type: Array,
