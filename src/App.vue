@@ -29,7 +29,22 @@ export default {
         title: 'Element 1', 
         children: [
           { title: 'Sub-element 1' },
-          { title: 'Sub-element 2' }
+          { 
+            title: 'Sub-element 2',
+            children: [
+              { 
+                title: 'Sub-sub-element 1', 
+                children: [
+                  { 
+                    title: 'Sub-sub-element 1',
+                    children: [
+                      { title: 'Sub-sub-sub-element 1' }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
         ]
       }
     ]

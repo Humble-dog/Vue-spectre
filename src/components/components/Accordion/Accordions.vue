@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import accordionItem from './Accordion-child'
 export default {
+  name: 'Accordian',
   mounted() {
     if (this.multiOpen) {
       this.active = [];
@@ -49,11 +49,13 @@ export default {
     }
   },
   components: {
-    accordionItem
+    accordionItem: () => import('./Accordion-recursion')
   }
 }
 </script>
 
 <style>
-
+.accordian {
+  transition-duration: 300ms;
+}
 </style>
