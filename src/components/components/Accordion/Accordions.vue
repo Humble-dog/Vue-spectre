@@ -7,14 +7,14 @@
         return value == index;
       })
       : active == index ? active = -1 : active = index" style="cursor: pointer;">
-        <i class="icon mr-1" v-if="icon"
+        <i class="icon" v-if="icon"
         :class="
         Array.isArray(active) 
         ? active.indexOf(index) != -1 ? 'icon-arrow-down' : 'icon-arrow-right'
         : active == index ? 'icon-arrow-down' : 'icon-arrow-right'"></i>
         {{item.title}}
       </div>
-      <accordionItem class="children" style="cursor: pointer;"
+      <accordionItem class="children" style="cursor: pointer; position: relative; left: .5rem;"
       v-if="item.children && Array.isArray(active)
       ? active.indexOf(index) != -1
       : active == index"
