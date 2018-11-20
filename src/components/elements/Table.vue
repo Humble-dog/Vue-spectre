@@ -19,6 +19,7 @@
 
 <script>
 export default {
+  name: 'Table',
   props: {
     header: {
       type: Array,
