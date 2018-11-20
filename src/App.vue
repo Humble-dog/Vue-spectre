@@ -7,6 +7,7 @@
       hello
     </sp-code>
     <sp-table :header="header" :data="data" striped></sp-table>
+    <sp-accordion :data="accordionData" :icon="true"></sp-accordion>
     <sp-form></sp-form>
   </div>
 </template>
@@ -22,6 +23,15 @@ export default {
     ],
     data: [
       { name: 'zz', zz: 'zz', z: 'zzz' }
+    ],
+    accordionData: [
+      { 
+        title: 'Element 1',
+        children: [
+          { title: 'Sub-element 1' },
+          { title: 'Sub-element 2' }
+        ]
+      }
     ]
   }),
   methods: {
