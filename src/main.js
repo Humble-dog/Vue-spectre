@@ -4,30 +4,30 @@ import '../node_modules/spectre.css/src/spectre.scss'
 import '../node_modules/spectre.css/src/spectre-exp.scss'
 import '../node_modules/spectre.css/src/spectre-icons.scss'
 
-import button from './components/elements/Button.vue'
-import label from './components/elements/Label.vue'
-import table from './components/elements/Table.vue'
-import form from './components/elements/Form.vue'
-import code from './components/elements/Code.vue'
-import icon from './components/elements/Icon.vue'
+/***********
+ * Element *
+ ***********/
+import Table from './components/elements/Table.vue'
+import Button from './components/elements/Button.vue'
+import Input from './components/elements/Form/Input.vue'
+import Icon from './components/elements/Icon.vue'
+import Label from './components/elements/Label.vue'
+import Code from './components/elements/Code.vue'
 
-import accordion from './components/components/Accordions/Accordions.vue'
-import avatar from './components/components/Avatars.vue'
+/**************
+ * Components *
+ **************/
+import Accordion from './components/components/Accordions/Accordions.vue'
+import Avatar from './components/components/Avatars.vue'
 
 const Components = {
-  button,
-  label,
-  table,
-  form,
-  code,
-  icon,
-  accordion,
-  avatar
+  Table, Button, Input, Icon, Label, Code, Accordion, Avatar
 }
+
 Vue.config.productionTip = false
 
 Object.keys(Components).forEach(name => {
-  Vue.component('sp-' + name, Components[name])
+  Vue.component('sp-' + name.toLowerCase(), Components[name])
 })
 
 Vue.prototype.spSizes = {
