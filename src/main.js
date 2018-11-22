@@ -11,7 +11,8 @@ import form from './components/elements/Form.vue'
 import code from './components/elements/Code.vue'
 import icon from './components/elements/Icon.vue'
 
-import accordion from './components/components/Accordion/Accordions.vue'
+import accordion from './components/components/Accordions/Accordions.vue'
+import avatar from './components/components/Avatars.vue'
 
 const Components = {
   button,
@@ -20,7 +21,8 @@ const Components = {
   form,
   code,
   icon,
-  accordion
+  accordion,
+  avatar
 }
 Vue.config.productionTip = false
 
