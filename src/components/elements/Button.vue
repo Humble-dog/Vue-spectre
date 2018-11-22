@@ -1,5 +1,5 @@
 <template>
-  <button class="spectre btn" 
+  <button class="spectre btn"
     @click="$emit('click', $event)"
     :class="[
       type ? 'btn-' + type : '',
@@ -21,7 +21,7 @@ export default {
     iconAlign: String,
     circled: {
       type: Boolean,
-      default: false,
+      default: false
     }
   }
 }
