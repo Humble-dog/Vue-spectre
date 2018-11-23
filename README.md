@@ -3,7 +3,7 @@ A Vue.js 2.0 UI Toolkit for spectre.css - https://picturepan2.github.io/spectre/
 
 ## Project setup
 ```
-npm install
+npm install & npm run serve
 ```
 
 ### Compiles and hot-reloads for development
