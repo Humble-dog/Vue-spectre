@@ -14,9 +14,7 @@
         <div>{{item.content}}</div>
       </template>
       <accordionItem class="children" style="cursor: pointer; position: relative; left: .5rem;"
-      v-if="item.children && Array.isArray(active)
-      ? active.indexOf(index) !== -1
-      : active === index"
+      v-if="item.children && checkActive(index)"
       :data="item.children" :icon="icon" :multiOpen="multiOpen" />
     </div>
   </div>
@@ -66,6 +64,11 @@ export default {
       Array.isArray(this.active)
       ? this.active.indexOf(index) === -1 ? this.active.push(index) : this.active.splice(this.active.indexOf(index), 1)
       : this.active === index ? this.active = -1 : this.active = index
+    },
+    checkActive(index) {
+      return Array.isArray(active)
+      ? active.indexOf(index) !== -1
+      : active === index
     },
     updateIcon(index) {
       return Array.isArray(this.active)
