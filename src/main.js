@@ -27,10 +27,22 @@ import Avatar from './components/components/Avatars.vue'
 import Badge from './components/components/Badges.vue'
 
 const Components = {
-  ///// Elements /////
-  Table, Button, Input, Radio, Select, Switch, Checkbox, Datepicker, Icon, Label, Code, 
-  ///// Components /////
-  Accordion, Avatar, Badge
+  /// // Elements /////
+  Table,
+  Button,
+  Input,
+  Radio,
+  Select,
+  Switch,
+  Checkbox,
+  Datepicker,
+  Icon,
+  Label,
+  Code,
+  /// // Components /////
+  Accordion,
+  Avatar,
+  Badge
 }
 
 Vue.config.productionTip = false
