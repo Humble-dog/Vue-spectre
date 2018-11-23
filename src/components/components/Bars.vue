@@ -5,19 +5,18 @@
   ]">
   
     <!-- Ranged Slider -->
-    <div class="bar-slider-group" v-if="slider && sliderRange"
+    <div class="bar-item" role="progressbar" :style="'width:'+end.value+'%;'"
+    v-if="slider && data.length === 2"
     v-for="end in data" :key="end.value">
-      <div class="bar-item" role="progressbar" :style="'width:'+end.value+'%;'">
-        <button class="bar-slider-btn btn" role="slider"
-        :class="[
-          tooltip ? 'tooltip' : '',
-          tooltipPosition ? 'tooltip-'+tooltipPosition : ''
-        ]" :data-tooltip="tooltip ? end.value : ''"></button>
-      </div>
+      <button class="bar-slider-btn btn" role="slider"
+      :class="[
+        tooltip ? 'tooltip' : '',
+        tooltipPosition ? 'tooltip-'+tooltipPosition : ''
+      ]" :data-tooltip="tooltip ? end.value : ''"></button>
     </div>
 
     <!-- Slider -->
-    <div class="bar-item" v-else-if="slider"
+    <div class="bar-item" v-if="slider && data.length === 1"
     role="progressbar" :style="'width:'+data.value+'%;'">
       <button class="bar-slider-btn btn" role="slider"
       :class="[
@@ -27,13 +26,11 @@
     </div>
 
     <!-- Multi -->
-    <div class="bar-item" :class="[
+    <div class="multi bar-item" :class="[
       tooltip ? 'tooltip' : '',
-      tooltipPosition ? 'tooltip-'+tooltipPosition : ''
-    ]" :data-tooltip="item.tooltip" :style="[
-      'width:'+item.value+'%;', 
-      'background-color:'+bgColor
-    ]"
+      tooltipPosition ? 'tooltip-'+tooltipPosition : '',
+      'bar-item-'+(index+1)
+    ]" :data-tooltip="item.tooltip" :style="'width:'+item.value+'%;'" 
     v-if="multi" v-for="(item, index) in data" :key="index">
       {{item.content || item.value}}
     </div>
@@ -41,10 +38,11 @@
     <!-- Single -->
     <div class="bar-item" :class="[
       tooltip ? 'tooltip' : '',
-      tooltipPosition ? 'tooltip-'+tooltipPosition : ''
-    ]" role="progressbar" :style="'width:'+data.value/(range[1] - range[0])*100+'%;'" v-else
-    :aria-valuenow="data.value" :aria-valuemin="range[0]" :aria-valuemax="range[1]">
-      {{data.content || data.value}}
+      tooltipPosition ? 'tooltip-'+tooltipPosition : '',
+    ]" :data-tooltip="data.tooltip || data.value" role="progressbar" :style="'width:'+(data.value-range[0])/(range[1] - range[0])*100+'%;'"
+    :aria-valuenow="data.value" :aria-valuemin="range[0]" :aria-valuemax="range[1]" 
+    v-if="!multi && !slider">
+      <div v-if="!noContent">{{data.content || data.value}}</div>
     </div>
   </div>
 </template>
@@ -59,7 +57,7 @@ export default {
         return [0, 100];
       },
       validator: function (thing) {
-        return thing.length == 2 && thing[0] < thing [1]
+        return thing.length === 2 && thing[0] < thing [1]
       }
     },
     thin: {
@@ -69,6 +67,10 @@ export default {
     multi: {
       type: Boolean,
       default: false
+    },
+    bgColor: {
+      type: String,
+      default: '#5755d9'
     },
     slider: {
       type: Boolean,
@@ -83,13 +85,22 @@ export default {
       validator: function (thing) {
         return [
           'up', 'right', 'left', 'bottom'
-        ].indexOf(thing) != -1
+        ].indexOf(thing) !== -1
       }
+    },
+    noContent: {
+      type: Boolean,
+      default: false
     }
   }
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.multi {
+  border-right: .1rem solid rgba(238,240,243,1);
+  &:last-child {
+    border-right: none;
+  }
+}
 </style>
