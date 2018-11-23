@@ -6,10 +6,10 @@
       class="form-label"
       :for="id || name"
       :class="[size ? 'label-' + spSizes[size] : '']"></label>
-    <select 
+    <select
       :id="id || name"
       :name="name || id"
-      class="form-select" 
+      class="form-select"
       v-model="selectValue"
       :class="size ? 'select-' + spSizes[size] : ''">
       <option
