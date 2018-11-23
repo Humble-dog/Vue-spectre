@@ -48,8 +48,7 @@ export default {
         this.inline ? 'form-inline' : '',
         this.size ? 'input-' + this.spSizes[this.size] : ''
       ]
-    },
-    
+    }
   },
   watch: {
     checkboxValue (val) {
@@ -58,19 +57,19 @@ export default {
   },
   methods: {
     checked (option) {
-      return Array.isArray(this.options) ? 
-             this.checkboxValue.indexOf(option) > -1 :
-             this.checkboxValue
+      return Array.isArray(this.options)
+        ? this.checkboxValue.indexOf(option) > -1
+        : this.checkboxValue
     },
     handleInput (e) {
-      if(e.target.checked){
-        if (this.options.length == 1) {
+      if (e.target.checked) {
+        if (this.options.length === 1) {
           this.checkboxValue = true
         } else {
           this.checkboxValue.push(e.target.value)
         }
       } else {
-        if (this.options.length == 1) {
+        if (this.options.length === 1) {
           this.checkboxValue = false
         } else {
           this.checkboxValue.splice(this.checkboxValue.indexOf(e.target.value), 1)

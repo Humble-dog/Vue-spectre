@@ -1,10 +1,10 @@
 <template>
   <div class="form-group" :class="state ? 'has-' + state : ''">
     <label class="form-switch">
-      <input 
+      <input
         :id="id || name"
         :name="name || id"
-        type="checkbox" 
+        type="checkbox"
         :disabled="disabled"
         v-model="switchValue"
         :size="size ? 'input-' + spSizes[size] : ''">
