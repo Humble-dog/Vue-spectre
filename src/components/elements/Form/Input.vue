@@ -11,6 +11,7 @@
         :id="id || name"
         :name="id || name"
         class="form-input"
+        :pattern="pattern"
         v-model="inputValue"
         :type="type || 'text'"
         :placeholder="placeholder"
@@ -36,6 +37,7 @@ export default {
     loading: Boolean,
     name: String,
     placeholder: String,
+    pattern: String,
     size: String,
     state: String,
     type: String,
