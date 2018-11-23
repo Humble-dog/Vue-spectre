@@ -14,6 +14,7 @@ import Radio from './components/elements/Form/Radio.vue'
 import Select from './components/elements/Form/Select.vue'
 import Switch from './components/elements/Form/Switch.vue'
 import Checkbox from './components/elements/Form/Checkbox.vue'
+import Datepicker from './components/elements/Form/Datepicker.vue'
 import Icon from './components/elements/Icon.vue'
 import Label from './components/elements/Label.vue'
 import Code from './components/elements/Code.vue'
@@ -25,7 +26,7 @@ import Accordion from './components/components/Accordions/Accordions.vue'
 import Avatar from './components/components/Avatars.vue'
 
 const Components = {
-  Table, Button, Input, Radio, Select, Switch, Checkbox, Icon, Label, Code, Accordion, Avatar
+  Table, Button, Input, Radio, Select, Switch, Checkbox, Datepicker, Icon, Label, Code, Accordion, Avatar
 }
 
 Vue.config.productionTip = false
