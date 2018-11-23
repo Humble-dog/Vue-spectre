@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VeeValidate from 'vee-validate'
 import '../node_modules/spectre.css/src/spectre.scss'
 import '../node_modules/spectre.css/src/spectre-exp.scss'
 import '../node_modules/spectre.css/src/spectre-icons.scss'
@@ -13,6 +14,7 @@ import Input from './components/elements/Form/Input.vue'
 import Radio from './components/elements/Form/Radio.vue'
 import Select from './components/elements/Form/Select.vue'
 import Switch from './components/elements/Form/Switch.vue'
+import Textarea from './components/elements/Form/Textarea.vue'
 import Checkbox from './components/elements/Form/Checkbox.vue'
 import Datepicker from './components/elements/Form/Datepicker.vue'
 import Icon from './components/elements/Icon.vue'
@@ -25,24 +27,27 @@ import Code from './components/elements/Code.vue'
 import Accordion from './components/components/Accordions/Accordions.vue'
 import Avatar from './components/components/Avatars.vue'
 import Badge from './components/components/Badges.vue'
+import Bar from './components/components/Bars.vue'
 
 const Components = {
-  /// // Elements /////
+  /* Elements */
   Table,
   Button,
   Input,
   Radio,
   Select,
   Switch,
+  Textarea,
   Checkbox,
   Datepicker,
   Icon,
   Label,
   Code,
-  /// // Components /////
+  /* Components */
   Accordion,
   Avatar,
-  Badge
+  Badge,
+  Bar
 }
 
 Vue.config.productionTip = false
@@ -55,6 +60,8 @@ Vue.prototype.spSizes = {
   'large': 'lg',
   'small': 'sm'
 }
+
+Vue.use(VeeValidate)
 
 new Vue({
   render: h => h(App)
