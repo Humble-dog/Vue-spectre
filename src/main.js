@@ -30,7 +30,7 @@ const Components = {
   ///// Elements /////
   Table, Button, Input, Radio, Select, Switch, Checkbox, Datepicker, Icon, Label, Code, 
   ///// Components /////
-  Accordion, Avatar, Badges
+  Accordion, Avatar, Badge
 }
 
 Vue.config.productionTip = false
