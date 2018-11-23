@@ -72,3 +72,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.form-group{
+  &.form-inline{
+    display: inline-flex;
+    .form-label{
+      margin-right: .4rem;
+    }
+  }
+}
+</style>
