@@ -2,14 +2,9 @@
   <div class="accordion-children">
     <div class="accordion-item"
     v-for="(item, index) in data" :key="item.title">
-      <div class="parent" @click="Array.isArray(active)
-      ? active.indexOf(index) === -1 ? active.push(index) : active.splice(active.indexOf(index), 1)
-      : active === index ? active = -1 : active = index" style="cursor: pointer;">
+      <div class="parent" @click="checkAdd(index)" style="cursor: pointer;">
         <i class="icon" v-if="icon"
-        :class="
-        Array.isArray(active)
-        ? active.indexOf(index) !== -1 ? 'icon-arrow-down' : 'icon-arrow-right'
-        : active === index ? 'icon-arrow-down' : 'icon-arrow-right'"></i>
+        :class="updateIcon(index)"></i>
         {{item.title}}
       </div>
       <template v-if="showContent(item, index, 'image')">
@@ -64,6 +59,18 @@ export default {
       }
       if (type === 'image') { return item.image && !item.children && found }
       if (type === 'content') { return item.content && !item.children && found }
+    }
+  }, 
+  computed: {
+    checkAdd(index) {
+      Array.isArray(this.active)
+      ? this.active.indexOf(index) === -1 ? this.active.push(index) : this.active.splice(this.active.indexOf(index), 1)
+      : this.active === index ? this.active = -1 : this.active = index
+    },
+    updateIcon(index) {
+      return Array.isArray(this.active)
+      ? this.active.indexOf(index) !== -1 ? 'icon-arrow-down' : 'icon-arrow-right'
+      : this.active === index ? 'icon-arrow-down' : 'icon-arrow-right'
     }
   }
 }
