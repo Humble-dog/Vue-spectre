@@ -23,9 +23,13 @@ import Code from './components/elements/Code.vue'
  **************/
 import Accordion from './components/components/Accordions/Accordions.vue'
 import Avatar from './components/components/Avatars.vue'
+import Badge from './components/components/Badges.vue'
 
 const Components = {
-  Table, Button, Input, Radio, Select, Switch, Checkbox, Icon, Label, Code, Accordion, Avatar
+  /////Elements/////
+  Table, Button, Input, Radio, Select, Switch, Checkbox, Icon, Label, Code, 
+  /////Components/////
+  Accordion, Avatar, Badge
 }
 
 Vue.config.productionTip = false
