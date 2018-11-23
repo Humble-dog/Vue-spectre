@@ -13,6 +13,7 @@ import Input from './components/elements/Form/Input.vue'
 import Radio from './components/elements/Form/Radio.vue'
 import Select from './components/elements/Form/Select.vue'
 import Switch from './components/elements/Form/Switch.vue'
+import Textarea from './components/elements/Form/Textarea.vue'
 import Checkbox from './components/elements/Form/Checkbox.vue'
 import Datepicker from './components/elements/Form/Datepicker.vue'
 import Icon from './components/elements/Icon.vue'
@@ -27,19 +28,20 @@ import Avatar from './components/components/Avatars.vue'
 import Badge from './components/components/Badges.vue'
 
 const Components = {
-  /// // Elements /////
+  /* Elements */
   Table,
   Button,
   Input,
   Radio,
   Select,
   Switch,
+  Textarea,
   Checkbox,
   Datepicker,
   Icon,
   Label,
   Code,
-  /// // Components /////
+  /* Components */
   Accordion,
   Avatar,
   Badge
