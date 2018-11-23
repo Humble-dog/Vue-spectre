@@ -12,6 +12,7 @@
         :name="id || name"
         class="form-input"
         :pattern="pattern"
+        v-validate="rule"
         v-model="inputValue"
         :type="type || 'text'"
         :placeholder="placeholder"
@@ -19,7 +20,7 @@
         :disabled="disabled">
       <i class="form-icon" :class="iconClass"></i>
     </div>
-    <p class="form-input-hint" v-if="hint" v-text="hint"></p>
+    <p class="form-input-hint" v-text="hintText"></p>
   </div>
 </template>
 
@@ -28,7 +29,7 @@ export default {
   name: 'Spectre-Input',
   props: {
     disabled: Boolean,
-    hint: String,
+    hint: [String, Object],
     id: String,
     icon: String,
     iconPosition: String,
@@ -38,6 +39,7 @@ export default {
     name: String,
     placeholder: String,
     pattern: String,
+    rule: [String, Object],
     size: String,
     state: String,
     type: String,
@@ -50,10 +52,31 @@ export default {
   },
   computed: {
     formGroupClass () {
+      let state
+      if (this.rule && !this.state && (this.id || this.name)) {
+        state = this.errors.first(this.id || this.name)
+          ? 'has-error'
+          : !this.inputValue ? '' : 'has-success'
+      } else {
+        state = this.state ? 'has-' + this.state : ''
+      }
       return [
         this.inline ? 'form-inline' : '',
-        this.state ? 'has-' + this.state : ''
+        state
       ]
+    },
+    hintText () {
+      if (this.hint) {
+        if (typeof this.hint === 'object') {
+          return this.errors.first(this.id || this.name)
+            ? this.hint.error
+            : this.hint.text
+        }
+        return this.hint
+      } else if (this.rule && !this.state && (this.id || this.name)) {
+        return this.errors.first(this.id || this.name)
+      }
+      return ''
     },
     iconClass () {
       let loading = this.loading ? 'loading' : ''

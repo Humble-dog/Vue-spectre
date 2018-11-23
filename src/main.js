@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VeeValidate from 'vee-validate'
 import '../node_modules/spectre.css/src/spectre.scss'
 import '../node_modules/spectre.css/src/spectre-exp.scss'
 import '../node_modules/spectre.css/src/spectre-icons.scss'
@@ -57,6 +58,8 @@ Vue.prototype.spSizes = {
   'large': 'lg',
   'small': 'sm'
 }
+
+Vue.use(VeeValidate)
 
 new Vue({
   render: h => h(App)
