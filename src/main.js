@@ -10,8 +10,10 @@ import '../node_modules/spectre.css/src/spectre-icons.scss'
  ***********/
 import Table from './components/elements/Table.vue'
 import Button from './components/elements/Button.vue'
+import Form from './components/elements/Form/Index.vue'
 import Input from './components/elements/Form/Input.vue'
 import Radio from './components/elements/Form/Radio.vue'
+import Slider from './components/elements/Form/Slider.vue'
 import Select from './components/elements/Form/Select.vue'
 import Switch from './components/elements/Form/Switch.vue'
 import Textarea from './components/elements/Form/Textarea.vue'
@@ -33,8 +35,10 @@ const Components = {
   /* Elements */
   Table,
   Button,
+  Form,
   Input,
   Radio,
+  Slider,
   Select,
   Switch,
   Textarea,
@@ -60,6 +64,12 @@ Vue.prototype.spSizes = {
   'large': 'lg',
   'small': 'sm'
 }
+
+Vue.directive('loading', {
+  inserted: function (el) {
+    el.className += ' loading'
+  }
+})
 
 Vue.use(VeeValidate)
 
