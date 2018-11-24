@@ -37,6 +37,7 @@ import CardImage from './components/components/Cards/Card-image.vue'
 import CardHeader from './components/components/Cards/Card-header.vue'
 import CardBody from './components/components/Cards/Card-body.vue'
 import CardFooter from './components/components/Cards/Card-footer.vue'
+import Chip from './components/components/Chips.vue'
 
 const Components = {
   /* Elements */
@@ -65,7 +66,8 @@ const Components = {
   CardImage,
   CardHeader,
   CardBody,
-  CardFooter
+  CardFooter,
+  Chip
 }
 
 Vue.config.productionTip = false
