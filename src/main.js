@@ -31,6 +31,11 @@ import Avatar from './components/components/Avatars.vue'
 import Badge from './components/components/Badges.vue'
 import Bar from './components/components/Bars.vue'
 import Breadcrumb from './components/components/Breadcrumbs.vue'
+import Card from './components/components/Cards/Cards.vue'
+import CardImage from './components/components/Cards/Card-image.vue'
+import CardHeader from './components/components/Cards/Card-header.vue'
+import CardBody from './components/components/Cards/Card-body.vue'
+import CardFooter from './components/components/Cards/Card-footer.vue'
 
 const Components = {
   /* Elements */
@@ -53,13 +58,18 @@ const Components = {
   Avatar,
   Badge,
   Bar,
-  Breadcrumb
+  Breadcrumb,
+  Card,
+  CardImage,
+  CardHeader,
+  CardBody,
+  CardFooter
 }
 
 Vue.config.productionTip = false
 
 Object.keys(Components).forEach(name => {
-  Vue.component('sp-' + name.toLowerCase(), Components[name])
+  Vue.component('sp-' + (name.charAt(0) + name.slice(1).split('').map(c => c === c.toUpperCase() ? '-' + c : c).join('')).toLowerCase(), Components[name])
 })
 
 Vue.prototype.spSizes = {
