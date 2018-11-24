@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group" :class="state ? 'has-' + state : ''">
+  <div class="form-group" :class="inputState">
     <label
       v-text="label"
       class="form-label"
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Spectre-Radio',
+  name: 'Spectre-Checkbox',
   props: {
     disabled: Boolean,
     id: String,
@@ -39,7 +39,7 @@ export default {
   },
   data () {
     return {
-      checkboxValue: this.value
+      checkboxValue: this.value || []
     }
   },
   computed: {
@@ -48,6 +48,9 @@ export default {
         this.inline ? 'form-inline' : '',
         this.size ? 'input-' + this.spSizes[this.size] : ''
       ]
+    },
+    inputState () {
+      return this.state ? 'has-' + this.state : ''
     }
   },
   watch: {
@@ -63,13 +66,13 @@ export default {
     },
     handleInput (e) {
       if (e.target.checked) {
-        if (this.options.length === 1) {
+        if (this.label && !this.options) {
           this.checkboxValue = true
         } else {
           this.checkboxValue.push(e.target.value)
         }
       } else {
-        if (this.options.length === 1) {
+        if (this.label && !this.options) {
           this.checkboxValue = false
         } else {
           this.checkboxValue.splice(this.checkboxValue.indexOf(e.target.value), 1)
