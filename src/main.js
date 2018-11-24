@@ -22,6 +22,7 @@ import Datepicker from './components/elements/Form/Datepicker.vue'
 import Icon from './components/elements/Icon.vue'
 import Label from './components/elements/Label.vue'
 import Code from './components/elements/Code.vue'
+import Video from './components/elements/Video.vue'
 
 /**************
  * Components *
@@ -47,6 +48,7 @@ const Components = {
   Icon,
   Label,
   Code,
+  Video,
   /* Components */
   Accordion,
   Avatar,
