@@ -48,6 +48,11 @@ export default {
     accordionItem: () => import('./Accordion-recursion')
   },
   methods: {
+    checkAdd (index) {
+      Array.isArray(this.active)
+        ? this.active.indexOf(index) === -1 ? this.active.push(index) : this.active.splice(this.active.indexOf(index), 1)
+        : this.active === index ? this.active = -1 : this.active = index
+    },
     showContent (item, index, type) {
       var found = false
       if (Array.isArray(this.active) && this.active.indexOf(index) !== -1) {
@@ -60,20 +65,15 @@ export default {
     }
   },
   computed: {
-    checkAdd(index) {
-      Array.isArray(this.active)
-      ? this.active.indexOf(index) === -1 ? this.active.push(index) : this.active.splice(this.active.indexOf(index), 1)
-      : this.active === index ? this.active = -1 : this.active = index
-    },
-    checkActive(index) {
-      return Array.isArray(active)
-      ? active.indexOf(index) !== -1
-      : active === index
-    },
-    updateIcon(index) {
+    checkActive (index) {
       return Array.isArray(this.active)
-      ? this.active.indexOf(index) !== -1 ? 'icon-arrow-down' : 'icon-arrow-right'
-      : this.active === index ? 'icon-arrow-down' : 'icon-arrow-right'
+        ? this.active.indexOf(index) !== -1
+        : this.active === index
+    },
+    updateIcon (index) {
+      return Array.isArray(this.active)
+        ? this.active.indexOf(index) !== -1 ? 'icon-arrow-down' : 'icon-arrow-right'
+        : this.active === index ? 'icon-arrow-down' : 'icon-arrow-right'
     }
   }
 }
@@ -81,8 +81,8 @@ export default {
 
 <style lang="scss" scoped>
 .children {
-  cursor: pointer; 
-  position: relative; 
+  cursor: pointer;
+  position: relative;
   left: .5rem;
 }
 </style>

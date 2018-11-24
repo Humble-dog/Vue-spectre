@@ -31,6 +31,7 @@ import Accordion from './components/components/Accordions/Accordions.vue'
 import Avatar from './components/components/Avatars.vue'
 import Badge from './components/components/Badges.vue'
 import Bar from './components/components/Bars.vue'
+import Breadcrumb from './components/components/Breadcrumbs.vue'
 
 const Components = {
   /* Elements */
@@ -53,7 +54,8 @@ const Components = {
   Accordion,
   Avatar,
   Badge,
-  Bar
+  Bar,
+  Breadcrumb
 }
 
 Vue.config.productionTip = false
