@@ -63,26 +63,15 @@ export default {
         return thing.length === 2 && thing[0] < thing[1]
       }
     },
-    thin: {
-      type: Boolean,
-      default: false
-    },
-    multi: {
-      type: Boolean,
-      default: false
-    },
+    thin: Boolean,
+    multi: Boolean,
     bgColor: {
       type: String,
       default: '#5755d9'
     },
-    slider: {
-      type: Boolean,
-      default: false
-    },
-    tooltip: {
-      type: Boolean,
-      default: false
-    },
+    slider: Boolean,
+    noContent: Boolean,
+    tooltip: Boolean,
     tooltipPosition: {
       type: String,
       validator: function (thing) {
@@ -90,10 +79,6 @@ export default {
           'up', 'right', 'left', 'bottom'
         ].indexOf(thing) !== -1
       }
-    },
-    noContent: {
-      type: Boolean,
-      default: false
     }
   }
 }
