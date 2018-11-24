@@ -38,6 +38,10 @@ import CardHeader from './components/components/Cards/Card-header.vue'
 import CardBody from './components/components/Cards/Card-body.vue'
 import CardFooter from './components/components/Cards/Card-footer.vue'
 import Chip from './components/components/Chips.vue'
+import EmptyState from './components/components/Empty-state/Empty-state.vue'
+import EmptyTitle from './components/components/Empty-state/Empty-title.vue'
+import EmptySubtitle from './components/components/Empty-state/Empty-subtitle.vue'
+import EmptyAction from './components/components/Empty-state/Empty-action.vue'
 
 const Components = {
   /* Elements */
@@ -67,7 +71,11 @@ const Components = {
   CardHeader,
   CardBody,
   CardFooter,
-  Chip
+  Chip,
+  EmptyState,
+  EmptyTitle,
+  EmptySubtitle,
+  EmptyAction
 }
 
 Vue.config.productionTip = false
