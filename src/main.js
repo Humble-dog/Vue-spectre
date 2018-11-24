@@ -42,6 +42,9 @@ import EmptyState from './components/components/Empty-state/Empty-state.vue'
 import EmptyTitle from './components/components/Empty-state/Empty-title.vue'
 import EmptySubtitle from './components/components/Empty-state/Empty-subtitle.vue'
 import EmptyAction from './components/components/Empty-state/Empty-action.vue'
+import Menu from './components/components/Menu/Menu.vue'
+import MenuItem from './components/components/Menu/Menu-item.vue'
+import MenuDivider from './components/components/Menu/Menu-divider.vue'
 
 const Components = {
   /* Elements */
@@ -75,7 +78,10 @@ const Components = {
   EmptyState,
   EmptyTitle,
   EmptySubtitle,
-  EmptyAction
+  EmptyAction,
+  Menu,
+  MenuItem,
+  MenuDivider
 }
 
 Vue.config.productionTip = false
